@@ -1,0 +1,26 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    #最大链接数
+    max-connections: 1000
+    #最大等待队列长度
+    accept-count: 1000
+    threads:
+      max: 200
+      min-spare: 200
+  #服务http端口
+  port: 8081
+management:
+  security:
+    enabled: false
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+      jmx:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /look
